@@ -82,10 +82,6 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 1rem;
   /* Keep the menu on the same column as the text, so the header does not look
      pasted onto the window edge on a wide screen. */
   padding-block: 0.75rem;
@@ -93,6 +89,15 @@ a:hover {
   background: rgba(251, 250, 247, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
+}
+
+/* The <nav> inside the header is the landmark; it also carries the flex layout
+   so the brand, the toggle and the list line up. */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
 }
 
 .brand {
