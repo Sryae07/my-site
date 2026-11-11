@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quotes — Learning HTML</title>
+  <meta name="description" content="Fifteen quotes about making things, choosing less, and finishing, with one of them picked at random for the top of the page.">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Quotes — Learning HTML">
+  <meta property="og:description" content="Fifteen quotes about making things, with one picked at random on every visit.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-nav></header>
+
+  <main id="main" class="wrap">
+    <h1>Quotes</h1>
+    <p class="lede">
+      Fifteen sentences I keep coming back to. The one at the top is chosen at
+      random each time you load this page — reload and you get a different one.
+    </p>
+
+    <section class="quote-hero" aria-labelledby="random-hero">
+      <h2 id="random-hero" class="eyebrow">Today's line</h2>
+      <blockquote>
+        <p id="quote-text">Loading…</p>
+        <cite id="quote-source"></cite>
+      </blockquote>
+      <button class="again" type="button" id="quote-again">Show another</button>
+    </section>
+
+    <section aria-labelledby="all-quotes">
+      <h2 id="all-quotes">All fifteen</h2>
+      <ol class="quote-list">
+        <li>
+          <q>Simplicity is prerequisite for reliability.</q>
+          <cite>Edsger W. Dijkstra</cite>
+        </li>
+        <li>
+          <q>Make it work, make it right, make it fast.</q>
+          <cite>Kent Beck</cite>
+        </li>
+        <li>
+          <q>Programs must be written for people to read, and only incidentally for machines to execute.</q>
+          <cite>Harold Abelson and Gerald Jay Sussman</cite>
+        </li>
+        <li>
+          <q>Premature optimization is the root of all evil.</q>
+          <cite>Donald Knuth</cite>
+        </li>
+        <li>
+          <q>The best way to get a good idea is to get a lot of ideas.</q>
+          <cite>Linus Pauling</cite>
+        </li>
+        <li>
+          <q>Have nothing in your house that you do not know to be useful, or believe to be beautiful.</q>
+          <cite>William Morris</cite>
+        </li>
+        <li>
+          <q>Done is better than perfect.</q>
+          <cite>Sheryl Sandberg</cite>
+        </li>
+        <li>
+          <q>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</q>
+          <cite>Martin Fowler</cite>
+        </li>
+        <li>
+          <q>Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.</q>
+          <cite>Antoine de Saint-Exupéry</cite>
+        </li>
+        <li>
+          <q>A ship in harbour is safe, but that is not what ships are built for.</q>
+          <cite>John A. Shedd</cite>
+        </li>
+        <li>
+          <q>The details are not the details. They make the design.</q>
+          <cite>Charles Eames</cite>
+        </li>
+        <li>
+          <q>Talk is cheap. Show me the code.</q>
+          <cite>Linus Torvalds</cite>
+        </li>
+        <li>
+          <q>Design is not just what it looks like and feels like. Design is how it works.</q>
+          <cite>Steve Jobs</cite>
+        </li>
+        <li>
+          <q>If you cannot explain it simply, you do not understand it well enough.</q>
+          <cite>attributed to Albert Einstein</cite>
+        </li>
+        <li>
+          <q>The journey of a thousand miles begins with a single step.</q>
+          <cite>Laozi, Tao Te Ching</cite>
+        </li>
+      </ol>
+      <p>
+        These are quoted from memory of the published work; the wording follows the
+        common English translation. The last one is marked <em>attributed</em> because
+        its exact source is disputed — better to say so than to sound certain.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Learning HTML — Web Technologies 2026, BiUH.</p>
+  </footer>
+
+  <script>
+    // The hero quote. Kept inline and small on purpose: it belongs to this page
+    // only, so a shared script would be extra indirection for no gain.
+    const QUOTES = [
+      ['Simplicity is prerequisite for reliability.', 'Edsger W. Dijkstra'],
+      ['Make it work, make it right, make it fast.', 'Kent Beck'],
+      ['Programs must be written for people to read, and only incidentally for machines to execute.', 'Harold Abelson and Gerald Jay Sussman'],
+      ['Premature optimization is the root of all evil.', 'Donald Knuth'],
+      ['The best way to get a good idea is to get a lot of ideas.', 'Linus Pauling'],
+      ['Have nothing in your house that you do not know to be useful, or believe to be beautiful.', 'William Morris'],
+      ['Done is better than perfect.', 'Sheryl Sandberg'],
+      ['Any fool can write code that a computer can understand. Good programmers write code that humans can understand.', 'Martin Fowler'],
+      ['Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.', 'Antoine de Saint-Exupéry'],
+      ['A ship in harbour is safe, but that is not what ships are built for.', 'John A. Shedd'],
+      ['The details are not the details. They make the design.', 'Charles Eames'],
+      ['Talk is cheap. Show me the code.', 'Linus Torvalds'],
+      ['Design is not just what it looks like and feels like. Design is how it works.', 'Steve Jobs'],
+      ['If you cannot explain it simply, you do not understand it well enough.', 'attributed to Albert Einstein'],
+      ['The journey of a thousand miles begins with a single step.', 'Laozi, Tao Te Ching'],
+    ];
+
+    const textEl = document.getElementById('quote-text');
+    const sourceEl = document.getElementById('quote-source');
+    const againButton = document.getElementById('quote-again');
+    let lastIndex = -1;
+
+    function showRandomQuote() {
+      let index = Math.floor(Math.random() * QUOTES.length);
+      // Avoid showing the same quote twice in a row: it looks like a bug.
+      if (QUOTES.length > 1 && index === lastIndex) {
+        index = (index + 1) % QUOTES.length;
+      }
+      lastIndex = index;
+      textEl.textContent = '\u201C' + QUOTES[index][0] + '\u201D';
+      sourceEl.textContent = '— ' + QUOTES[index][1];
+    }
+
+    againButton.addEventListener('click', showRandomQuote);
+    showRandomQuote();
+  </script>
+</body>
+</html>
