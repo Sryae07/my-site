@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project ideas — Learning HTML</title>
+  <meta name="description" content="Five things I could build, who each one is for, and which of them I chose for the personal project.">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Project ideas — Learning HTML">
+  <meta property="og:description" content="Five ideas, who each one is for, and the one I picked.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-nav></header>
+
+  <main id="main" class="wrap">
+    <h1>Things I might build</h1>
+    <p class="lede">
+      Five ideas, written down quickly before judging any of them. For each one:
+      what it is, who it is for, and the four pages it would need. Then the one
+      that survived the questions.
+    </p>
+
+    <section aria-labelledby="ideas">
+      <h2 id="ideas">The five</h2>
+      <ol class="idea-list">
+        <li class="idea">
+          <h3>1 · A desk for my AI tools</h3>
+          <p>
+            Notes on the local AI stack I actually run: how the agent framework is
+            installed, what broke, and the checks that prove it works.
+          </p>
+          <dl>
+            <dt>Who for</dt>
+            <dd>Classmates who ask me how the setup works.</dd>
+            <dt>Four pages</dt>
+            <dd>Home · Setups · Troubleshooting · About</dd>
+            <dt>Status</dt>
+            <dd><span class="status picked">Built as my personal project</span></dd>
+          </dl>
+        </li>
+        <li class="idea">
+          <h3>2 · A portfolio that answers questions</h3>
+          <p>
+            Four case studies instead of a list of skills: what the problem was,
+            what I built, what I would change.
+          </p>
+          <dl>
+            <dt>Who for</dt>
+            <dd>Anyone reading a CV and wondering whether the claims are true.</dd>
+            <dt>Four pages</dt>
+            <dd>Home · Work · Notes · Contact</dd>
+            <dt>Status</dt>
+            <dd><span class="status picked">Merged into idea 1</span></dd>
+          </dl>
+        </li>
+        <li class="idea">
+          <h3>3 · A survival guide for new students</h3>
+          <p>
+            Where to eat, how the campus wifi works, which office answers which
+            question — the page I wish I had in my first week.
+          </p>
+          <dl>
+            <dt>Who for</dt>
+            <dd>Students arriving next semester.</dd>
+            <dt>Four pages</dt>
+            <dd>Home · Food · Campus · Contacts</dd>
+            <dt>Status</dt>
+            <dd><span class="status later">Later — needs photos I do not have yet</span></dd>
+          </dl>
+        </li>
+        <li class="idea">
+          <h3>4 · A study timer that counts honestly</h3>
+          <p>
+            Pomodoro-style sessions with a running total, so the number at the end
+            of the week is real instead of remembered.
+          </p>
+          <dl>
+            <dt>Who for</dt>
+            <dd>Me, during exam weeks.</dd>
+            <dt>Four pages</dt>
+            <dd>Home · Timer · History · Settings</dd>
+            <dt>Status</dt>
+            <dd><span class="status later">Later — needs storage, which the brief rules out</span></dd>
+          </dl>
+        </li>
+        <li class="idea">
+          <h3>5 · A page that explains one bug</h3>
+          <p>
+            One long-form page about a single hard bug: the wrong diagnosis, the
+            evidence that settled it, and the fix.
+          </p>
+          <dl>
+            <dt>Who for</dt>
+            <dd>Anyone who hits the same error message.</dd>
+            <dt>Four pages</dt>
+            <dd>Home · The bug · The fix · Notes</dd>
+            <dt>Status</dt>
+            <dd><span class="status later">Later — one page is not four</span></dd>
+          </dl>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="chosen">
+      <h2 id="chosen">Which one, and why</h2>
+      <p>
+        The first two were really the same site seen from two angles, so I merged
+        them: a portfolio whose case studies <em>are</em> the notes. That satisfies
+        the four pages, gives me material I can defend without rehearsing, and
+        keeps the smallest version worth showing to four pages.
+      </p>
+      <p>
+        The others were dropped for honest reasons rather than taste: idea 3 needs
+        photographs I do not have, idea 4 needs to store data between visits and the
+        brief says nothing may depend on that, and idea 5 does not survive the
+        four-page test.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Learning HTML — Web Technologies 2026, BiUH.</p>
+  </footer>
+</body>
+</html>
