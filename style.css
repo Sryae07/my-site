@@ -649,12 +649,27 @@ p {
   }
 }
 
+/* Hide the screen-reader labels: the switch needs a name, not a caption. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Motion is decoration here, so the few things that move simply stop moving. */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .knob,
+  .hand,
+  .dot,
+  .button,
+  .card {
+    animation: none;
+    transition: none;
   }
 }
