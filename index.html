@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning HTML — a small site built in class</title>
+  <meta name="description" content="The site built lesson by lesson in Web Technologies: a home page, fifteen quotes, a page of project ideas and a useless machine.">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Learning HTML">
+  <meta property="og:description" content="A small site built lesson by lesson: quotes, project ideas, and one useless machine.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-nav>
+    <!-- nav.html is fetched and inserted here by nav.js -->
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Web Technologies · Project 1</p>
+        <h1>A website, built one lesson at a time.</h1>
+        <p class="lede">
+          Fourteen small steps: a page with a hero, a page of quotes that shows a
+          different one every visit, ideas for what to build next, and a machine
+          whose only job is to switch itself off.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="quotes.html">Read the quotes</a>
+          <a class="button secondary" href="machine.html">Try the machine</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="images/hero.svg" width="1200" height="630"
+             alt="Illustration: a browser window drawn as an outline, with the words Learning HTML inside it.">
+      </div>
+    </section>
+
+    <section aria-labelledby="inside">
+      <h2 id="inside">What is in here</h2>
+      <div class="card-grid">
+        <article class="card">
+          <span class="tag">Quotes</span>
+          <h3>Fifteen quotes, one hero</h3>
+          <p>
+            Fifteen sentences worth keeping, and a hero that picks a different one
+            every time the page loads.
+          </p>
+          <p><a href="quotes.html">Open the quotes</a></p>
+        </article>
+        <article class="card">
+          <span class="tag">Projects</span>
+          <h3>Five ideas, one of them next</h3>
+          <p>
+            The list I wrote before choosing: what it is, who it is for, and which
+            one I picked to build properly.
+          </p>
+          <p><a href="project.html">See the ideas</a></p>
+        </article>
+        <article class="card">
+          <span class="tag">Machine</span>
+          <h3>A toy that refuses to help</h3>
+          <p>
+            A switch that turns itself off, and a small game for the seconds when
+            you would rather click a dot than read anything.
+          </p>
+          <p><a href="machine.html">Meet the machine</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="how">
+      <h2 id="how">How it is built</h2>
+      <p>
+        Four pages share one stylesheet and one navigation. The navigation is not
+        copied into each page: it lives in <code>nav.html</code> and
+        <code>nav.js</code> fetches it and marks the current page, so a new link
+        means editing one file instead of four.
+      </p>
+      <p>
+        Everything is plain HTML, CSS and JavaScript — no framework, no build step.
+        The layout is mobile-first: the styles describe the phone, and wider screens
+        get extra columns. If a script fails, the content is still there to read,
+        which is the point of writing the structure first and the decoration second.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Learning HTML — Web Technologies 2026, BiUH. Built in class, lesson by lesson.</p>
+  </footer>
+</body>
+</html>
