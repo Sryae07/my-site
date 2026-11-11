@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The machine — Learning HTML</title>
+  <meta name="description" content="A useless machine that switches itself off, and a small game about catching a dot before it moves again.">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The machine — Learning HTML">
+  <meta property="og:description" content="A switch that turns itself off, and a game that keeps score.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="stylesheet" href="style.css">
+  <script src="nav.js" defer></script>
+  <script src="machine.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-nav></header>
+
+  <main id="main" class="wrap">
+    <h1>The machine</h1>
+    <p class="lede">
+      A useless machine does exactly one thing: when you turn it on, it turns
+      itself off. The pleasure is in watching something refuse to be useful.
+    </p>
+
+    <section aria-labelledby="useless">
+      <h2 id="useless">Useless machine</h2>
+      <div class="machine">
+        <div class="switch-stage">
+          <button class="big-switch" type="button" id="the-switch" aria-pressed="false"
+                  aria-labelledby="switch-label">
+            <span class="knob" aria-hidden="true"></span>
+            <span class="visually-hidden" id="switch-label">Turn the machine on</span>
+          </button>
+          <div class="hand" id="the-hand" aria-hidden="true"></div>
+        </div>
+        <div>
+          <h3>Try it</h3>
+          <p>
+            Click the switch. A hand arrives, pushes it back down, and leaves. That
+            is the whole machine.
+          </p>
+          <p class="machine-log" id="machine-log" role="status" aria-live="polite">
+            The machine is off. It is waiting.
+          </p>
+          <p>
+            It is built from one button, one CSS transition and a short animation:
+            no images, no canvas. The state is announced with
+            <code>aria-pressed</code>, so a screen reader knows whether the machine
+            is on before the hand gets there.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="game">
+      <h2 id="game">Catch the dot</h2>
+      <p>
+        Thirty seconds. A dot appears somewhere in the box; click it and it moves.
+        Keyboard works too — the dot is a button, so <kbd>Tab</kbd> to it and press
+        <kbd>Enter</kbd>.
+      </p>
+
+      <div class="game">
+        <div class="game-bar">
+          <button class="button" type="button" id="game-start">Start</button>
+          <p class="score">Score <strong id="game-score">0</strong></p>
+          <p class="score">Time <strong id="game-time">30</strong>s</p>
+        </div>
+        <div class="board" id="game-board">
+          <!-- The dot is created by machine.js when the game starts. -->
+        </div>
+        <p class="game-hint" id="game-hint" role="status" aria-live="polite">
+          Press Start when you are ready.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Learning HTML — Web Technologies 2026, BiUH.</p>
+  </footer>
+</body>
+</html>
